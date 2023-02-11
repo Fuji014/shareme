@@ -36,6 +36,8 @@ const Home = () => {
       <div className="hidden md:flex h-screen flex-initial">
         <Sidebar closeToggle={setToggleSidebar} user={user && user} />
       </div>
+
+      {/** for medium devices */}
       <div className="flex md:hidden flex-row">
         <div className="p-2 w-full flex flex-row justify-between items-center shadow-md">
           <HiMenu
@@ -64,6 +66,7 @@ const Home = () => {
         )}
       </div>
 
+      {/** for large devices */}
       <div className="pb-2 flex-1 h-screen overflow-y-scroll" ref={scrollRef}>
         <Routes>
           <Route path="/user-profile/:userId" element={<UserProfile />} />
